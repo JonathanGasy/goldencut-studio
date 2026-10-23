@@ -40,7 +40,7 @@ const SITE = {
   ],
 
   // ---------- Contact ----------
-  email: "jopgedeco@gmail.com",
+  email: "almainty7@gmail.com",
   whatsapp: "261342779148", // sans + ni espaces
   reseaux: [
     { nom: "Facebook", lien: "https://facebook.com/jonathan.andriambelo" },
@@ -199,18 +199,18 @@ const EQUIPE = [
    ===================================================================== */
 const TEMOIGNAGES = [
   {
-    texte: "Colle ici le vrai avis d'Ossam sur ton travail.",
+    texte: "t'es chuad 🔥, j'aime bien.",
     nom: "Ossam Nomad",
     role: "Pulsia Extreme Expedition",
   },
   {
-    texte: "Colle ici le vrai avis de Nathan sur ton travail.",
-    nom: "Nathan Vaevin",
+    texte: "I took a quick look,I'm happy at first glance.",
+    nom: "Nathan Van veen",
     role: "Créateur de contenu",
   },
   {
-    texte: "Colle ici le vrai avis de Jim sur ton travail.",
-    nom: "Jim",
+    texte: "Je te fais confiance .",
+    nom: "Kally Kurl",
     role: "Client",
   },
 ];
