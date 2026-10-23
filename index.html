@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Golden Cut — Studio de montage vidéo & IA</title>
+  <meta name="description" content="Golden Cut, studio de trois monteurs : montage vidéo, shorts et vidéos générées par IA.">
+  <meta property="og:title" content="Golden Cut — Studio de montage vidéo & IA">
+  <meta property="og:description" content="Montage, shorts viraux et vidéos IA.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0a0b0d">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230a0b0d'/><circle cx='50' cy='50' r='14' fill='%23d6b13a'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Écran de chargement -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__tc"><span class="dot"></span><span id="loaderTc">00:00:00:00</span></div>
+    <div class="loader__bar"><span></span></div>
+  </div>
+
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><span>Lire</span></div>
+
+  <!-- En-tête -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__logo" data-bind="nom">Golden Cut</a>
+    <nav class="nav__links">
+      <a href="#travaux">Travaux</a>
+      <a href="#services">Services</a>
+      <a href="#equipe">Équipe</a>
+      <a href="#avis">Avis</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="nav__status" id="status"><span class="pulse"></span><span id="statusTxt">Disponible</span></a>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__bg" id="heroBg">
+        <div class="hero__orb hero__orb--1"></div>
+        <div class="hero__orb hero__orb--2"></div>
+      </div>
+      <div class="hero__frame" aria-hidden="true">
+        <span class="corner tl"></span><span class="corner tr"></span>
+        <span class="corner bl"></span><span class="corner br"></span>
+        <div class="hero__rec"><span class="dot"></span>REC <span id="heroTc">00:00:00:00</span></div>
+        <div class="hero__meta">4K · 25 FPS · ISO 800</div>
+      </div>
+
+      <div class="hero__inner">
+        <p class="eyebrow reveal"><span class="eyebrow__brand" data-bind="nom"></span> · <span data-bind="metier"></span> — <span data-bind="localisation"></span></p>
+        <h1 class="hero__title reveal" id="heroTitle"></h1>
+        <div class="hero__bottom reveal">
+          <p class="hero__sub" data-bind="sousTitre"></p>
+          <div class="hero__ctas">
+            <a href="#travaux" class="btn btn--light">Voir nos travaux</a>
+            <button class="btn btn--ghost" id="reelBtn"><span class="play">▶</span> Showreel</button>
+          </div>
+        </div>
+      </div>
+      <a href="#travaux" class="hero__scroll" aria-label="Défiler">Défiler <span></span></a>
+    </section>
+
+    <!-- BANDEAU OUTILS -->
+    <div class="marquee" aria-label="Outils">
+      <div class="marquee__track" id="marquee"></div>
+    </div>
+
+    <!-- TRAVAUX -->
+    <section class="section" id="travaux">
+      <div class="section__head">
+        <p class="label reveal">(01) — Travaux sélectionnés</p>
+        <h2 class="section__title reveal">Chaque coupe a une <em>raison</em>.</h2>
+      </div>
+      <div class="filters reveal" id="filters" role="tablist">
+        <button class="filter is-active" data-f="tous">Tout <sup id="c-tous"></sup></button>
+        <button class="filter" data-f="montage">Montage <sup id="c-montage"></sup></button>
+        <button class="filter" data-f="shorts">Shorts <sup id="c-shorts"></sup></button>
+        <button class="filter" data-f="ia">Vidéo IA <sup id="c-ia"></sup></button>
+      </div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <!-- CHIFFRES -->
+    <section class="stats" id="stats"></section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <div class="section__head">
+        <p class="label reveal">(02) — Services</p>
+        <h2 class="section__title reveal">Du rush brut au <em>rendu final</em>.</h2>
+      </div>
+      <div class="services" id="servicesList"></div>
+    </section>
+
+    <!-- ÉQUIPE -->
+    <section class="section" id="equipe">
+      <div class="section__head">
+        <p class="label reveal">(03) — L'équipe</p>
+        <h2 class="section__title reveal">Trois monteurs, <em>une</em> signature.</h2>
+      </div>
+      <div class="team" id="team"></div>
+    </section>
+
+    <!-- AVIS -->
+    <section class="section" id="avis">
+      <div class="section__head">
+        <p class="label reveal">(04) — Ils nous ont fait confiance</p>
+      </div>
+      <div class="quotes" id="quotes"></div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <p class="label reveal">(05) — Contact</p>
+      <h2 class="contact__title reveal">Un projet&nbsp;? <em>Parlons-en.</em></h2>
+      <a class="contact__mail reveal" id="mailLink" href="#"></a>
+      <div class="contact__actions reveal">
+        <a class="btn btn--accent" id="waLink" href="#" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+        <div class="socials" id="socials"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> <span data-bind="nom"></span></span>
+    <span class="footer__tc js-slogan">Fin du montage · 00:00:00:00</span>
+    <a href="#top">Haut ↑</a>
+  </footer>
+
+  <!-- Lecteur vidéo -->
+  <div class="modal" id="modal" aria-hidden="true" role="dialog">
+    <button class="modal__close" id="modalClose" aria-label="Fermer">Fermer ✕</button>
+    <div class="modal__body">
+      <div class="modal__player" id="player"></div>
+      <div class="modal__info" id="modalInfo"></div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
