@@ -199,22 +199,18 @@ const EQUIPE = [
    ===================================================================== */
 const TEMOIGNAGES = [
   {
-    texte: "t'es chuad 🔥, j'aime bien.",
     texte: "T'es chaud 🔥, j'aime bien.",
     nom: "Ossam Nomad",
     role: "Pulsia Extreme Expedition",
   },
   {
-    texte: "I took a quick look,I'm happy at first glance.",
     texte: "I took a quick look, I'm happy at first glance.",
     nom: "Nathan Van veen",
     role: "Créateur de contenu",
   },
   {
-    texte: "Je te fais confiance .",
     texte: "Je te fais confiance.",
     nom: "Kally Kurl",
-    role: "Client",
     role: "Salon Kallycurls",
   },
 ];
